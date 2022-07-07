@@ -38,4 +38,17 @@ describe("Locators", () => {
     // Get all elements by with specific data-test-id with a custom command in commands.js
     cy.getByTestId("btn-id-1");
   });
+
+  it("location elements with contains", () => {
+    cy.contains("Unique Text");
+
+    // Get an element with text
+    cy.contains("Not Unique Text");
+
+    // More specific
+    cy.contains("[type='submit']", "Not Unique Text");
+
+    // or
+    cy.get("[type='submit']").contains("Not Unique Text");
+  });
 });
