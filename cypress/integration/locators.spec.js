@@ -39,7 +39,7 @@ describe("Locators", () => {
     cy.getByTestId("btn-id-1");
   });
 
-  it("location elements with contains", () => {
+  it("locating elements with contains", () => {
     cy.contains("Unique Text");
 
     // Get an element with text
@@ -50,5 +50,10 @@ describe("Locators", () => {
 
     // or
     cy.get("[type='submit']").contains("Not Unique Text");
+  });
+
+  it("locating elements with find", () => {
+    cy.get("#form-1").find(".btn-1");
+    cy.get("#form-1").find(".btn-2");
   });
 });
